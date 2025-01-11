@@ -12,7 +12,8 @@ from static import *
 # webhook url that can be loaded from .env with same name (see .env.example)
 COURSE_IDS = {
     72681: 'ECE_350_WEBHOOK',
-    72536: 'COMPSCI_308_WEBHOOK'
+    72536: 'COMPSCI_308_WEBHOOK',
+    73072: 'TEST_WEBHOOK'
 }
 
 class EventHandler:
