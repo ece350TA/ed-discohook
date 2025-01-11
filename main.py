@@ -11,9 +11,8 @@ from static import *
 
 # webhook url that can be loaded from .env with same name (see .env.example)
 COURSE_IDS = {
-    12345: 'CS_XYZ_WEBHOOK',  
-    12346: 'DATA_XYZ_WEBHOOK',    
-    12347: 'INFO_XYZ_WEBHOOK',
+    72681: 'ECE_350_WEBHOOK',
+    72536: 'COMPSCI_308_WEBHOOK'
 }
 
 class EventHandler:
@@ -59,10 +58,8 @@ class EventHandler:
                 'name': '{} • {}'.format(course.code, thread.category),
                 'url': BASE_URL + '/courses/{}/discussion'.format(thread.course_id)},
             'footer': {
-                'text': 'Anonymous User' if thread.is_anonymous else '{} ({})'.format(
-                    thread.user.name, thread.user.course_role.capitalize()),
-                'icon_url': AVATAR_URL + thread.user.avatar if not thread.is_anonymous and
-                    thread.user.avatar else USER_ICON
+                'text': 'Anonymous User' if thread.is_anonymous else 'Name Hidden',
+                'icon_url': USER_ICON
             },
             'timestamp': f'{datetime.now(timezone.utc).isoformat()[:-9]}Z'
         }]
